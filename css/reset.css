@@ -1,0 +1,49 @@
+/* Reset some default browser styling */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove default list styles */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove default anchor styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove default table styles */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Make sure images and media are responsive */
+img, picture, video, iframe, object, embed {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Set up font-size for body, make text rendering more consistent */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #333;
+}
+
+/* For accessibility */
+img {
+    alt: 'Image not available'; /* Provide fallback text */
+}
+
+/* Disable focus outline for all browsers, add a custom one if needed */
+*:focus {
+    outline: none;
+}
