@@ -1,46 +1,53 @@
-/* Global Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #D6A77A; /* Coffee-like beige background */
+/* Global Reset */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F1E1C6; /* Soft beige background */
+    color: #333;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
 }
 
-/* Container Styles */
+/* Container Styling */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    background-image: url('https://example.com/chicago-coffee-background.jpg'); /* Optional background image of Chicago or coffee */
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9;
 }
 
-/* Login Box Styles */
+/* Login Box Styling */
 .login-box {
-    background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for contrast */
-    padding: 40px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: 300px;
+    background-color: rgba(50, 50, 50, 0.8); /* Dark gray background */
+    border-radius: 10px;
+    padding: 30px;
+    width: 320px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
 }
 
-.login-box h1 {
-    color: #f1f1f1;
-    font-size: 2.2em;
-    margin-bottom: 20px;
+/* Heading */
+h1 {
     font-family: 'Courier New', Courier, monospace;
+    font-size: 2.4em;
+    color: #A81C1C; /* Dark red for the header */
+    margin-bottom: 20px;
 }
 
-/* Textbox Styles */
+/* Textbox Input Styling */
 .textbox {
     margin: 15px 0;
     position: relative;
@@ -49,34 +56,46 @@ body {
 .textbox input {
     width: 100%;
     padding: 12px;
-    border: none;
-    border-radius: 5px;
     font-size: 1.1em;
+    border: 2px solid #9B2929; /* Red border */
+    border-radius: 5px;
     color: #333;
-    background-color: #fff;
-    box-sizing: border-box;
+    background-color: #F1E1C6; /* Beige background */
     transition: all 0.3s;
 }
 
+/* Focus Effect on Textbox Inputs */
 .textbox input:focus {
     outline: none;
-    border: 2px solid #7d4f24; /* Deep coffee color */
-    background-color: #f7e7d2; /* Lighter background on focus */
+    border-color: #A81C1C; /* Darker red border on focus */
+    background-color: #FFD1D1; /* Light red background on focus */
 }
 
-/* Submit Button */
+/* Submit Button Styling */
 input[type="submit"] {
     width: 100%;
     padding: 15px;
-    background-color: #7d4f24; /* Deep coffee brown */
-    border: none;
-    color: white;
     font-size: 1.2em;
+    background-color: #9B2929; /* Red color */
+    border: none;
     border-radius: 5px;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+/* Submit Button Hover Effect */
 input[type="submit"]:hover {
-    background-color: #6a3e18; /* Slightly darker brown */
+    background-color: #A81C1C; /* Darker red on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .login-box {
+        width: 280px;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+    }
 }
