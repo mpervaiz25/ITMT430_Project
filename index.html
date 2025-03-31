@@ -1,13 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>The HTML5 Template</title>
-<link rel="stylesheet" type="text/css" media="all" href="/static/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roast Radar</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Google's OAuth 2.0 JavaScript API -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
-<h1>Code is being served via Express engine!</h1>
-|<a href="/about"> About Page </a> | <a href="/user"> User Page </a> | <a href="/questions"> Questions Page </a> | <a href="/db"> Sample Database Query </a>|<br />
-<img src=/static/images/700.jpg />
+    <div class="container">
+        <div class="login-box">
+            <h1>Login</h1>
+            <form action="#">
+                <div class="textbox">
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <input type="submit" value="Login">
+            </form>
+            <p>or</p>
+            <!-- Google Login Button -->
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
+    </div>
+
+    <script>
+        // Google sign-in callback
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log("ID: " + profile.getId());
+            console.log("Full Name: " + profile.getName());
+            console.log("Given Name: " + profile.getGivenName());
+            console.log("Family Name: " + profile.getFamilyName());
+            console.log("Email: " + profile.getEmail());
+
+            // Here you would typically send the ID token to your server for further processing
+            var id_token = googleUser.getAuthResponse().id_token;
+            console.log("ID Token: " + id_token);
+
+            // Optionally, you can redirect the user after successful login
+            window.location.href = "http://localhost:8000/auth-callback"; // Replace with your redirect URL
+        }
+
+        // Sign out function (optional)
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function() {
+                console.log('User signed out.');
+            });
+        }
+    </script>
 </body>
 </html>
