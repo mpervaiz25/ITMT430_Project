@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roast Radar</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reset.css"> <!-- Link to Reset CSS -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to Custom Styles -->
     <!-- Include Google's OAuth 2.0 JavaScript API -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
@@ -41,7 +42,7 @@
             var id_token = googleUser.getAuthResponse().id_token;
             console.log("ID Token: " + id_token);
 
-            // Optionally, you can redirect the user after successful login
+            // Optionally, you can redirect the user after successful login Replace "http://localhost:8000/auth-callback" with your actual redirect URL where users will be sent after login.
             window.location.href = "http://localhost:8000/auth-callback"; // Replace with your redirect URL
         }
 
