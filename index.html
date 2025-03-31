@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roast Radar</title>
-    <link rel="stylesheet" href="reset.css"> <!-- Link to Reset CSS -->
-    <link rel="stylesheet" href="style.css"> <!-- Link to Custom Styles -->
-    <!-- Include Google's OAuth 2.0 JavaScript API -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Chicago Coffee Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -22,37 +19,7 @@
                 </div>
                 <input type="submit" value="Login">
             </form>
-            <p>or</p>
-            <!-- Google Login Button -->
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </div>
     </div>
-
-    <script>
-        // Google sign-in callback
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log("ID: " + profile.getId());
-            console.log("Full Name: " + profile.getName());
-            console.log("Given Name: " + profile.getGivenName());
-            console.log("Family Name: " + profile.getFamilyName());
-            console.log("Email: " + profile.getEmail());
-
-            // Here you would typically send the ID token to your server for further processing
-            var id_token = googleUser.getAuthResponse().id_token;
-            console.log("ID Token: " + id_token);
-
-            // Optionally, you can redirect the user after successful login Replace "http://localhost:8000/auth-callback" with your actual redirect URL where users will be sent after login.
-            window.location.href = "http://localhost:8000/auth-callback"; // Replace with your redirect URL
-        }
-
-        // Sign out function (optional)
-        function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function() {
-                console.log('User signed out.');
-            });
-        }
-    </script>
 </body>
 </html>
